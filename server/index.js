@@ -13,12 +13,32 @@ app.options('*', cors()); // Enable pre-flight for all routes
 app.use(express.json());
 
 // Database Setup
-const dbPath = path.resolve(__dirname, 'blood_donation.db');
+// Database Setup
+const fs = require('fs');
+// Vercel /tmp workaround: Copy DB to /tmp location if it doesn't exist
+const dbSource = path.resolve(__dirname, 'blood_donation.db');
+const dbPath = process.env.VERCEL ? '/tmp/blood_donation.db' : dbSource;
+
+if (process.env.VERCEL && !fs.existsSync(dbPath)) {
+    // If running on Vercel and /tmp db doesn't exist, create/copy it
+    try {
+        if (fs.existsSync(dbSource)) {
+            fs.copyFileSync(dbSource, dbPath);
+            console.log('Database copied to /tmp');
+        } else {
+            // If source doesn't exist (fresh deploy), just let sqlite create it
+            console.log('No source database found, creating new one in /tmp');
+        }
+    } catch (err) {
+        console.error('Error copying database to /tmp:', err);
+    }
+}
+
 const db = new sqlite3.Database(dbPath, (err) => {
     if (err) {
         console.error('Error opening database:', err.message);
     } else {
-        console.log('Connected to the SQLite database.');
+        console.log(`Connected to the SQLite database at ${dbPath}`);
         initializeDatabase();
     }
 });
