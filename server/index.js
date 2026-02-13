@@ -148,8 +148,13 @@ app.post('/api/admin/verify/:id', (req, res) => {
         res.json({ message: 'Donor verified' });
     });
 });
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-});
+// For local development
+if (require.main === module) {
+    app.listen(port, () => {
+        console.log(`Server running on port ${port}`);
+    });
+}
 
-module.exports = { app, db };
+// For Vercel Serverless
+module.exports = app;
+
