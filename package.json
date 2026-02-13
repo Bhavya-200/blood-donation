@@ -8,6 +8,6 @@
         "build": "npm run install-client && npm run build-client"
     },
     "engines": {
-        "node": "18.x"
+        "node": "22.x"
     }
 }
