@@ -8,11 +8,8 @@ const port = process.env.PORT || 5000;
 
 // Middleware
 // Middleware
-app.use(cors({
-    origin: '*', // For hackathon/demo purposes, allow all. In production, set to Vercel URL.
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization']
-}));
+app.use(cors()); // Allow all origins (Default is *)
+app.options('*', cors()); // Enable pre-flight for all routes
 app.use(express.json());
 
 // Database Setup
