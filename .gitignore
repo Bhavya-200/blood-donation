@@ -1,0 +1,6 @@
+node_modules
+dist
+build
+.env
+bloood_donation.db
+*.log
