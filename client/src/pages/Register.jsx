@@ -28,16 +28,16 @@ const Register = () => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
             });
-            const data = await res.json();
             if (res.ok) {
-                alert('Registration Successful! Please login.');
+                alert('Registration successful! Please login.');
                 navigate('/login');
             } else {
-                alert(data.error || 'Registration failed');
+                const data = await res.json();
+                alert(`Registration failed: ${data.error || res.statusText}`);
             }
         } catch (error) {
             console.error(error);
-            alert('Something went wrong');
+            alert(`Network Error: ${error.message}. Check console.`);
         }
     };
 

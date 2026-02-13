@@ -30,10 +30,12 @@ const RequestBlood = () => {
                 alert('Blood request submitted successfully!');
                 navigate('/');
             } else {
-                alert('Failed to submit request');
+                const data = await res.json();
+                alert(`Failed to submit request: ${data.error || res.statusText}`);
             }
         } catch (error) {
             console.error(error);
+            alert(`Network Error: ${error.message}. Check console for details.`);
         }
     };
 
