@@ -2,11 +2,11 @@
   <img src="./img.png" alt="Project Banner" width="100%">
 </p>
 
-# [Project Name] 🎯
+BLOOD DONATION FINDER 🎯
 
 ## Basic Details
 
-### Team Name: [Name]
+### Team Name: Cosmics
 
 ### Team Members
 - Member 1: Bhavya.P - LBS College of Engineering,Kasaragod
