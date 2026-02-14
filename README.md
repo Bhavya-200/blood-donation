@@ -9,20 +9,20 @@
 ### Team Name: [Name]
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
+- Member 1: Bhavya.P - LBS College of Engineering,Kasaragod
+- Member 2: Abhija Satheesh -LBS College of Engineering,Kasaragod
 
 ### Hosted Project Link
-[mention your project hosted link here]
+https://blood-donation-2g1q.vercel.app/
 
 ### Project Description
-[2-3 lines about what your project does]
+Blood Donation Finder is a website that helps patients and hospitals quickly find nearby blood donors based on blood group and location. Donors can register and update availability, and seekers can instantly search and contact matching donors during emergencies.
 
 ### The Problem statement
-[What problem are you solving?]
+In Kerala, emergency blood requirements are usually handled through WhatsApp groups, Facebook posts, and personal contacts. Although Kerala has good healthcare facilities, patients still face serious difficulties in finding the right blood group donor quickly, especially during accidents, surgeries, childbirth complications, and cancer treatments.
 
 ### The Solution
-[How are you solving it?]
+Kerala needs a reliable web-based Blood Donation Finder system that allows donors to register and update availability, and enables patients/hospitals to quickly search for nearby donors based on blood group and location, ensuring faster response during emergencies.
 
 ---
 
@@ -31,25 +31,29 @@
 ### Technologies/Components Used
 
 **For Software:**
-- Languages used: [e.g., JavaScript, Python, Java]
-- Frameworks used: [e.g., React, Django, Spring Boot]
-- Libraries used: [e.g., axios, pandas, JUnit]
-- Tools used: [e.g., VS Code, Git, Docker]
+- Languages used: JavaScript,css,html,SQL
+- Frameworks used: Frontend: React.js (built with Vite) for a fast, responsive user interface.
+Backend: Node.js with Express.js for handling API requests.
+- Libraries used: react-router-dom: For client-side routing and navigation.
+lucide-react: For modern, lightweight UI icons.
+sqlite3: A lightweight relational database engine for storing donor and request data.
+cors: To enable Cross-Origin Resource Sharing between frontend and backend.
+- Tools used: Visual Studio Code, Git & GitHub for version control, Vercel for cloud deployment
 
 **For Hardware:**
-- Main components: [List main components]
-- Specifications: [Technical specifications]
-- Tools required: [List tools needed]
+- Main components: Device with Internet Access (Laptop/Smartphone).
+- Specifications: Any modern web browser (Chrome)
+- Tools required: (Web-based application)
 
 ---
 
 ## Features
 
 List the key features of your project:
-- Feature 1: [Description]
-- Feature 2: [Description]
-- Feature 3: [Description]
-- Feature 4: [Description]
+- Feature 1: Smart Donor Search: Users can instantly filter donors by Blood Group (e.g., A+, O-) and District (e.g., Kasaragod, Kannur) to find matches nearby.
+- Feature 2: Donor Registration System: Simple, user-friendly form for individuals to register as donors, capturing essential details like Age, Blood Group, and Contact Info.
+- Feature 3: Emergency Blood Requests: A dedicated feature for patients or bystanders to post urgent blood requirements, which can be viewed by potential donors.
+- Feature 4: Real-time Availability Status: Donors are displayed with "Available" or "Not Available" badges, ensuring seekers don't waste time contacting unavailable donors.
 
 ---
 
@@ -59,12 +63,12 @@ List the key features of your project:
 
 #### Installation
 ```bash
-[Installation commands - e.g., npm install, pip install -r requirements.txt]
+npm install
 ```
 
 #### Run
 ```bash
-[Run commands - e.g., npm start, python app.py]
+ npm start
 ```
 
 ### For Hardware:
@@ -83,14 +87,7 @@ List the key features of your project:
 
 #### Screenshots (Add at least 3)
 
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
-
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
-
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+https://drive.google.com/drive/folders/1q-MWFp0A2QhZlA2JtyGola3_1K2xwVNQ?usp=sharing
 
 #### Diagrams
 
@@ -102,7 +99,7 @@ List the key features of your project:
 **Application Workflow:**
 
 ![Workflow](docs/workflow.png)
-*Add caption explaining your workflow*
+https://drive.google.com/drive/folders/1DXASL3EbcgL-4EdW92G5Fyws6RdXpdNZ?usp=sharing
 
 ---
 
