@@ -9,10 +9,8 @@ const Search = () => {
     });
 
     useEffect(() => {
-        if (filters.group || filters.district) {
-            fetchDonors();
-        }
-    }, [filters]); // Fetch when filters change (debouncing could be added)
+        fetchDonors();
+    }, [filters]);
 
     // Also fetch on mount if params exist
     useEffect(() => {
