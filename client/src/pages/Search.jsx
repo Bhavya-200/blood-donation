@@ -20,16 +20,26 @@ const Search = () => {
         });
     }, [searchParams]);
 
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('');
+
     const fetchDonors = async () => {
+        setLoading(true);
+        setError('');
         try {
             const query = new URLSearchParams(filters).toString();
             const res = await fetch(`${API_BASE_URL}/api/donors?${query}`);
             if (res.ok) {
                 const data = await res.json();
                 setDonors(data);
+            } else {
+                setError('Failed to fetch donors');
             }
         } catch (error) {
             console.error("Failed to fetch donors", error);
+            setError('Network error: ' + error.message);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -47,7 +57,17 @@ const Search = () => {
             </div>
 
             <div className="donors-grid">
-                {donors.length > 0 ? (
+                {loading && <p>Loading donors...</p>}
+                {error && <p style={{ color: 'red' }}>{error}</p>}
+                {!loading && !error && donors.length === 0 && (
+                    <div style={{ textAlign: 'center', padding: '20px' }}>
+                        <p>No donors found.</p>
+                        <p><strong>Note:</strong> Since this is a demo, the database resets on every update.</p>
+                        <p>Please <a href="/register">Register</a> yourself first.</p>
+                    </div>
+                )}
+
+                {!loading && !error && donors.length > 0 && (
                     donors.map(donor => (
                         <div key={donor.id} className="donor-card">
                             <h3>{donor.name}</h3>
@@ -65,8 +85,6 @@ const Search = () => {
                             </a>
                         </div>
                     ))
-                ) : (
-                    <p>No donors found. Try adjusting filters.</p>
                 )}
             </div>
         </div>
