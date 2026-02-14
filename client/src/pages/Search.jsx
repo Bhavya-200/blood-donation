@@ -1,3 +1,7 @@
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { BloodGroupSelect, DistrictSelect } from '../components/Inputs';
+import { CheckCircle, XCircle, Phone } from 'lucide-react';
 import API_BASE_URL from '../utils/api';
 
 const Search = () => {
