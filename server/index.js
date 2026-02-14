@@ -124,7 +124,8 @@ app.put('/api/donors/:id', (req, res) => {
 // Search Donors
 app.get('/api/donors', (req, res) => {
     const { group, district } = req.query;
-    let sql = `SELECT * FROM donors WHERE verified = 1`;
+    // DEMO MODE: Show all donors (even unverified ones) to make testing easier
+    let sql = `SELECT * FROM donors WHERE 1=1`;
     const params = [];
 
     if (group) {
